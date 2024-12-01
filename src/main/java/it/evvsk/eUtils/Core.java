@@ -30,6 +30,7 @@ public final class Core extends JavaPlugin {
         getCommand("msg").setExecutor(msgCommand);
         getCommand("broadcast").setExecutor(new BroadcastCommand());
         getCommand("r").setExecutor(new ResponseCommand());
+        getCommand("pancake").setExecutor(new PancakeCommand());
 
         getServer().getPluginManager().registerEvents(new EntityDamageListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
