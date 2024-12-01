@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/EUtils.main.iml" filepath="$PROJECT_DIR$/.idea/modules/EUtils.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/it.evvsk.EUtils.main.iml" filepath="$PROJECT_DIR$/.idea/modules/it.evvsk.EUtils.main.iml" />
     </modules>
   </component>
 </project>

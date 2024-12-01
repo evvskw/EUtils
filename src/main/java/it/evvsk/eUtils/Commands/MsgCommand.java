@@ -7,7 +7,12 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MsgCommand implements CommandExecutor {
+
+	public Map<Player, Player> lastMessagedPlayerList = new HashMap<>();
 
 	@Override
 	public final boolean onCommand(final CommandSender sender, final Command command, final String s, final String[] args) {
@@ -30,6 +35,10 @@ public class MsgCommand implements CommandExecutor {
 
 			subjectPlayer.sendMessage(SC.CC("From &e&l" + p.getName() + " &8» &f" + message));
 			p.sendMessage(SC.CC("To &e&l" + subjectPlayer.getName() + " &8» &f" + message));
+			lastMessagedPlayerList.remove(p);
+			lastMessagedPlayerList.remove(subjectPlayer);
+			lastMessagedPlayerList.put(p, subjectPlayer);
+			lastMessagedPlayerList.put(subjectPlayer, p);
 
 		} else {
 			p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cCorrect usage: /msg <player> <message>"));

@@ -87,6 +87,14 @@ commands:
       - dm
     permission: eutils.command.msg
 
+  r:
+    description: Responds to last DMed player
+    usage: /<command> <message>
+    aliases:
+      - respond
+      - response
+    permission: eutils.command.response
+
   broadcast:
     description: Broadcast a message.
     usage: /<command> <message>

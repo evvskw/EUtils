@@ -8,6 +8,7 @@ public final class Core extends JavaPlugin {
 
     private static Core instance;
     private static GodCommand godCommand;
+    private MsgCommand msgCommand;
 
     @Override
     public void onEnable() {
@@ -15,6 +16,7 @@ public final class Core extends JavaPlugin {
         instance = this;
 
         godCommand = new GodCommand();
+        msgCommand = new MsgCommand();
 
         getCommand("god").setExecutor(godCommand);
         getCommand("feed").setExecutor(new FeedCommand());
@@ -25,8 +27,9 @@ public final class Core extends JavaPlugin {
         getCommand("eutils").setExecutor(new MainCommand());
         getCommand("fly").setExecutor(new FlyCommand());
         getCommand("heal").setExecutor(new HealCommand());
-        getCommand("msg").setExecutor(new MsgCommand());
+        getCommand("msg").setExecutor(msgCommand);
         getCommand("broadcast").setExecutor(new BroadcastCommand());
+        getCommand("r").setExecutor(new ResponseCommand());
 
         getServer().getPluginManager().registerEvents(new GodEvent(), this);
 
@@ -50,6 +53,12 @@ public final class Core extends JavaPlugin {
     public GodCommand getGodCommand() {
 
         return godCommand;
+
+    }
+
+    public MsgCommand getMsgCommand() {
+
+        return msgCommand;
 
     }
 
