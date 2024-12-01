@@ -1,5 +1,5 @@
 name: EUtils
-version: '1.0-SNAPSHOT'
+version: '1.2-SNAPSHOT'
 main: it.evvsk.eUtils.Core
 api-version: '1.8.8'
 description: A simple plugin with various utility commands.
@@ -92,6 +92,7 @@ commands:
     usage: /<command> <message>
     aliases:
       - respond
+      - reply
       - response
     permission: eutils.command.response
 
