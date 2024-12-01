@@ -1,7 +1,8 @@
 package it.evvsk.eUtils;
 
 import it.evvsk.eUtils.Commands.*;
-import it.evvsk.eUtils.Events.GodEvent;
+import it.evvsk.eUtils.Events.EntityDamageListener;
+import it.evvsk.eUtils.Events.PlayerJoinListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Core extends JavaPlugin {
@@ -12,7 +13,6 @@ public final class Core extends JavaPlugin {
 
     @Override
     public void onEnable() {
-
         instance = this;
 
         godCommand = new GodCommand();
@@ -31,35 +31,26 @@ public final class Core extends JavaPlugin {
         getCommand("broadcast").setExecutor(new BroadcastCommand());
         getCommand("r").setExecutor(new ResponseCommand());
 
-        getServer().getPluginManager().registerEvents(new GodEvent(), this);
+        getServer().getPluginManager().registerEvents(new EntityDamageListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
 
         getLogger().info("EUtils has started successfully.");
-
     }
 
     @Override
     public void onDisable() {
-
         getLogger().info("EUtils has stopped successfully. Goodbye!");
-
     }
 
     public static Core getInstance() {
-
         return instance;
-
     }
 
     public GodCommand getGodCommand() {
-
         return godCommand;
-
     }
 
     public MsgCommand getMsgCommand() {
-
         return msgCommand;
-
     }
-
 }
