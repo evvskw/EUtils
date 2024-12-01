@@ -30,7 +30,7 @@ public final class FeedCommand implements CommandExecutor {
                 final Player subjectPlayer;
 
                 if ((subjectPlayer = Bukkit.getPlayer(args[0])) == null) {
-                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &cPlayer not found."));
+                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cPlayer not found."));
                     return true;
                 }
 

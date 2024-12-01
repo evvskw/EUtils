@@ -22,7 +22,7 @@ public final class GMSurvivalCommand implements CommandExecutor {
 
         if (!p.hasPermission("eutils.command.gamemode.survival")) {
 
-            p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &cInsufficient permissions."));
+            p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cInsufficient permissions."));
 
         } else {
 
@@ -31,7 +31,7 @@ public final class GMSurvivalCommand implements CommandExecutor {
                 final Player subjectPlayer;
 
                 if ((subjectPlayer = Bukkit.getPlayer(args[0])) == null) {
-                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &cPlayer not found."));
+                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cPlayer not found."));
                     return true;
                 }
 
@@ -39,20 +39,20 @@ public final class GMSurvivalCommand implements CommandExecutor {
 
                 if (subjectPlayer.getName().endsWith("s")) {
 
-                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &a" + subjectPlayer.getName() + "' gamemode has been changed successfully to survival."));
+                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &a" + subjectPlayer.getName() + "' gamemode has been changed successfully to survival."));
 
                 } else {
 
-                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &a" + subjectPlayer.getName() + "'s gamemode has been changed successfully to survival."));
+                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &a" + subjectPlayer.getName() + "'s gamemode has been changed successfully to survival."));
 
                 }
 
-                subjectPlayer.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &aYour gamemode has been changed successfully to survival."));
+                subjectPlayer.sendMessage(SC.CC("&e&lE&f&lUtils &8» &aYour gamemode has been changed successfully to survival."));
 
             } else {
 
                 p.setGameMode(GameMode.SURVIVAL);
-                p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &aYour gamemode has been changed successfully to survival."));
+                p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &aYour gamemode has been changed successfully to survival."));
 
             }
 

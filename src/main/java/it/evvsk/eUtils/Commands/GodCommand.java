@@ -25,7 +25,7 @@ public final class GodCommand implements CommandExecutor {
 
         if (!p.hasPermission("eutils.command.god")) {
 
-            p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &cInsufficient permissions."));
+            p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cInsufficient permissions."));
 
         } else {
 
@@ -34,7 +34,7 @@ public final class GodCommand implements CommandExecutor {
                 final Player subjectPlayer = Bukkit.getPlayer(args[0]);
 
                 if (subjectPlayer == null) {
-                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &cPlayer not found."));
+                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cPlayer not found."));
                     return true;
                 }
 
@@ -42,15 +42,15 @@ public final class GodCommand implements CommandExecutor {
 
                     godPlayers.remove(subjectPlayer);
 
-                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &c" + subjectPlayer.getName() + " has now godmode disabled."));
-                    subjectPlayer.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &cYou have now godmode disabled."));
+                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &c" + subjectPlayer.getName() + " has now godmode disabled."));
+                    subjectPlayer.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cYou have now godmode disabled."));
 
                 } else {
 
                     godPlayers.add(subjectPlayer);
 
-                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &a" + subjectPlayer.getName() + " has now godmode enabled."));
-                    subjectPlayer.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &aYou have now godmode enabled."));
+                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &a" + subjectPlayer.getName() + " has now godmode enabled."));
+                    subjectPlayer.sendMessage(SC.CC("&e&lE&f&lUtils &8» &aYou have now godmode enabled."));
 
                 }
 
@@ -59,12 +59,12 @@ public final class GodCommand implements CommandExecutor {
                 if (godPlayers.contains(p)) {
 
                     godPlayers.remove(p);
-                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &cYou have now godmode disabled."));
+                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cYou have now godmode disabled."));
 
                 } else {
 
                     godPlayers.add(p);
-                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &aYou have now godmode enabled."));
+                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &aYou have now godmode enabled."));
 
                 }
 

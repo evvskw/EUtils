@@ -25,6 +25,8 @@ public final class Core extends JavaPlugin {
         getCommand("eutils").setExecutor(new MainCommand());
         getCommand("fly").setExecutor(new FlyCommand());
         getCommand("heal").setExecutor(new HealCommand());
+        getCommand("msg").setExecutor(new MsgCommand());
+        getCommand("broadcast").setExecutor(new BroadcastCommand());
 
         getServer().getPluginManager().registerEvents(new GodEvent(), this);
 

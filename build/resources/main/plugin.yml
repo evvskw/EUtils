@@ -12,6 +12,8 @@ commands:
     usage: /<command>
     aliases:
       - godmode
+    permission: eutils.command.god
+    permission-message: "&cYou don't have permission to use this command."
 
   gmc:
     description: Changes a player's gamemode to Creative.
@@ -19,6 +21,7 @@ commands:
     aliases:
       - gamemodecreative
       - creative
+    permission: eutils.command.gamemode.creative
 
   gms:
     description: Changes a player's gamemode to Survival.
@@ -26,6 +29,7 @@ commands:
     aliases:
       - gamemodesurvival
       - survival
+    permission: eutils.command.gamemode.survival
 
   gmsp:
     description: Changes a player's gamemode to Spectator.
@@ -33,6 +37,7 @@ commands:
     aliases:
       - gamemodespectator
       - spectator
+    permission: eutils.command.gamemode.spectator
 
   gma:
     description: Changes a player's gamemode to Adventure.
@@ -40,6 +45,7 @@ commands:
     aliases:
       - gamemodeadventure
       - adventure
+    permission: eutils.command.gamemode.adventure
 
   feed:
     description: Feeds a player.
@@ -47,6 +53,7 @@ commands:
     aliases:
       - fd
       - food
+    permission: eutils.command.feed
 
   eutils:
     description: Displays the plugin help information.
@@ -55,16 +62,34 @@ commands:
       - help
       - about
       - info
+    permission: eutils.command.eutils
 
   fly:
     description: Toggles fly mode for a player.
     usage: /<command> <player>
+    permission: eutils.command.fly
 
   heal:
     description: Heals a player.
-    usage: /<heal> <player>
+    usage: /<command> <player>
     aliases:
       - hp
       - heart
       - hearts
       - htp
+    permission: eutils.command.heal
+
+  msg:
+    description: DMs a player.
+    usage: /<command> <player> <message>
+    aliases:
+      - tell
+      - dm
+    permission: eutils.command.msg
+
+  broadcast:
+    description: Broadcast a message.
+    usage: /<command> <message>
+    aliases:
+      - bc
+    permission: eutils.command.broadcast

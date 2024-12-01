@@ -21,7 +21,7 @@ public final class FlyCommand implements CommandExecutor {
 
         if (!p.hasPermission("eutils.command.fly")) {
 
-            p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &cInsufficient permissions."));
+            p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cInsufficient permissions."));
 
         } else {
 
@@ -36,16 +36,16 @@ public final class FlyCommand implements CommandExecutor {
                     subjectPlayer.setFlying(false);
                     subjectPlayer.setAllowFlight(false);
 
-                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &a" + subjectPlayer.getName() + " is not flying anymore."));
-                    subjectPlayer.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &cFlying is now disabled."));
+                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &a" + subjectPlayer.getName() + " is not flying anymore."));
+                    subjectPlayer.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cFlying is now disabled."));
 
                 } else {
 
                     subjectPlayer.setAllowFlight(true);
                     subjectPlayer.setFlying(true);
 
-                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &a" + subjectPlayer.getName() + " is now flying."));
-                    subjectPlayer.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &aFlying is now enabled."));
+                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &a" + subjectPlayer.getName() + " is now flying."));
+                    subjectPlayer.sendMessage(SC.CC("&e&lE&f&lUtils &8» &aFlying is now enabled."));
 
                 }
 
@@ -56,14 +56,14 @@ public final class FlyCommand implements CommandExecutor {
                     p.setFlying(false);
                     p.setAllowFlight(false);
 
-                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &cFlying is now disabled."));
+                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cFlying is now disabled."));
 
                 } else {
 
                     p.setAllowFlight(true);
                     p.setFlying(true);
 
-                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &aFlying is now enabled."));
+                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &aFlying is now enabled."));
 
                 }
 

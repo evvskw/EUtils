@@ -21,7 +21,7 @@ public final class HealCommand implements CommandExecutor {
 
         if (!p.hasPermission("eutils.command.feed")) {
 
-            p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &cInsufficient permissions."));
+            p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cInsufficient permissions."));
 
         } else {
 
@@ -30,7 +30,7 @@ public final class HealCommand implements CommandExecutor {
                 final Player subjectPlayer;
 
                 if ((subjectPlayer = Bukkit.getPlayer(args[0])) == null) {
-                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &cPlayer not found."));
+                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cPlayer not found."));
                     return true;
                 }
 
@@ -38,20 +38,20 @@ public final class HealCommand implements CommandExecutor {
 
                 if (subjectPlayer.getName().endsWith("s")) {
 
-                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &a" + subjectPlayer.getName() + "' health has been filled successfully."));
+                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &a" + subjectPlayer.getName() + "' health has been filled successfully."));
 
                 } else {
 
-                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &a" + subjectPlayer.getName() + "'s health has been filled successfully."));
+                    p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &a" + subjectPlayer.getName() + "'s health has been filled successfully."));
 
                 }
 
-                subjectPlayer.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &aYour health has been filled successfully."));
+                subjectPlayer.sendMessage(SC.CC("&e&lE&f&lUtils &8» &aYour health has been filled successfully."));
 
             } else {
 
                 p.setHealth(20);
-                p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &aYour health has been filled successfully."));
+                p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &aYour health has been filled successfully."));
 
             }
 
