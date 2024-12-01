@@ -1,0 +1,70 @@
+name: EUtils
+version: '1.0-SNAPSHOT'
+main: it.evvsk.eUtils.Core
+api-version: '1.8.8'
+description: A simple plugin with various utility commands.
+author: evvsk
+
+commands:
+
+  god:
+    description: Enables or disables god mode.
+    usage: /<command>
+    aliases:
+      - godmode
+
+  gmc:
+    description: Changes a player's gamemode to Creative.
+    usage: /<command> <player>
+    aliases:
+      - gamemodecreative
+      - creative
+
+  gms:
+    description: Changes a player's gamemode to Survival.
+    usage: /<command> <player>
+    aliases:
+      - gamemodesurvival
+      - survival
+
+  gmsp:
+    description: Changes a player's gamemode to Spectator.
+    usage: /<command> <player>
+    aliases:
+      - gamemodespectator
+      - spectator
+
+  gma:
+    description: Changes a player's gamemode to Adventure.
+    usage: /<command> <player>
+    aliases:
+      - gamemodeadventure
+      - adventure
+
+  feed:
+    description: Feeds a player.
+    usage: /<command> <player>
+    aliases:
+      - fd
+      - food
+
+  eutils:
+    description: Displays the plugin help information.
+    usage: /<command>
+    aliases:
+      - help
+      - about
+      - info
+
+  fly:
+    description: Toggles fly mode for a player.
+    usage: /<command> <player>
+
+  heal:
+    description: Heals a player.
+    usage: /<heal> <player>
+    aliases:
+      - hp
+      - heart
+      - hearts
+      - htp
