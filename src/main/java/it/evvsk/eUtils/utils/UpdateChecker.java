@@ -1,4 +1,4 @@
-package it.evvsk.eUtils.Utils;
+package it.evvsk.eUtils.utils;
 
 import it.evvsk.eUtils.Core;
 

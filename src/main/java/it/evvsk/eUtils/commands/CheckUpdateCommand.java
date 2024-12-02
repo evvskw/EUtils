@@ -1,41 +1,39 @@
-package it.evvsk.eUtils.Commands;
+package it.evvsk.eUtils.commands;
 
 import it.evvsk.eUtils.Core;
-import it.evvsk.eUtils.Utils.SC;
+import it.evvsk.eUtils.utils.SC;
 import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public final class CheckUpdateCommand implements CommandExecutor {
 
-	private static final String VERSION = Core.getInstance().getDescription().getVersion();
+	private final String VERSION = Core.getInstance().getDescription().getVersion();
 
 	@Override
-	public boolean onCommand(final org.bukkit.command.CommandSender sender, final org.bukkit.command.Command command, final String s, final String[] args) {
-
-		final Player p;
-
-		if (!((p = Bukkit.getPlayer(args[0])).hasPermission("eutils.command.checkupdate"))) {
-
-			p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cInsufficient permissions."));
-
+	public boolean onCommand(final CommandSender sender, final Command command, final String s, final String[] args) {
+		if (!(sender instanceof Player p)) {
+			Bukkit.getLogger().info("You must be a player to perform this command.");
 			return true;
+		}
 
+		if (!p.hasPermission("eutils.command.checkupdate")) {
+			p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cInsufficient permissions."));
+			return true;
 		}
 
 		try {
 			final String latestVersion = Core.getInstance().getLatestVersion();
-
 			if (latestVersion != null && !VERSION.equals(latestVersion)) {
 				notifyPlayer(p, latestVersion);
-			} else {
-				p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &aYour EUtils's version is up-to-date!"));
+				return true;
 			}
-
+			p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &aYour EUtils version is up-to-date!"));
 		} catch (final Exception e) {
-			Core.getInstance().getLogger().severe("Error checking for updates: " + e.getMessage());
+			Bukkit.getLogger().severe("Error checking for updates: " + e.getMessage());
 		}
-
 		return true;
 
 	}

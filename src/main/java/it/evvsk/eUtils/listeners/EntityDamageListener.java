@@ -1,4 +1,4 @@
-package it.evvsk.eUtils.Events;
+package it.evvsk.eUtils.listeners;
 
 import it.evvsk.eUtils.Core;
 import org.bukkit.event.EventHandler;
@@ -9,13 +9,9 @@ public final class EntityDamageListener implements Listener {
 
     @EventHandler
     public void onEntityDamage(final EntityDamageEvent e) {
-
-        if (Core.getInstance().getGodCommand().godPlayers.contains(e.getEntity())) {
-
+        if (Core.getInstance().getGods().contains(e.getEntity())) {
             e.setCancelled(true);
-
         }
-
     }
 
 }

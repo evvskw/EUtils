@@ -1,6 +1,6 @@
-package it.evvsk.eUtils.Commands;
+package it.evvsk.eUtils.commands;
 
-import it.evvsk.eUtils.Utils.SC;
+import it.evvsk.eUtils.utils.SC;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

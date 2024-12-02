@@ -1,7 +1,7 @@
-package it.evvsk.eUtils.Events;
+package it.evvsk.eUtils.listeners;
 
 import it.evvsk.eUtils.Core;
-import it.evvsk.eUtils.Utils.SC;
+import it.evvsk.eUtils.utils.SC;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

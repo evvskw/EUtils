@@ -1,28 +1,35 @@
 package it.evvsk.eUtils;
 
-import it.evvsk.eUtils.Commands.*;
-import it.evvsk.eUtils.Events.EntityDamageListener;
-import it.evvsk.eUtils.Events.PlayerJoinListener;
-import it.evvsk.eUtils.Utils.UpdateChecker;
+import it.evvsk.eUtils.commands.*;
+import it.evvsk.eUtils.listeners.EntityDamageListener;
+import it.evvsk.eUtils.listeners.PlayerJoinListener;
+import it.evvsk.eUtils.utils.UpdateChecker;
+import lombok.Getter;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@Getter
 public final class Core extends JavaPlugin {
 
-    private static Core instance;
-    private static GodCommand godCommand;
-    private MsgCommand msgCommand;
+    @Getter private static Core instance;
+    private List<Player> gods;
     private String latestVersion;
+    private Map<Player, Player> lastMessagedPlayerList;
 
     @Override
     public void onEnable() {
         instance = this;
+        gods = new ArrayList<>();
+        lastMessagedPlayerList = new HashMap<>();
 
         checkForUpdates();
 
-        godCommand = new GodCommand();
-        msgCommand = new MsgCommand();
-
-        getCommand("god").setExecutor(godCommand);
+        getCommand("god").setExecutor(new GodCommand());
         getCommand("feed").setExecutor(new FeedCommand());
         getCommand("gmc").setExecutor(new GMCreativeCommand());
         getCommand("gms").setExecutor(new GMSurvivalCommand());
@@ -31,7 +38,7 @@ public final class Core extends JavaPlugin {
         getCommand("eutils").setExecutor(new HelpCommand(this));
         getCommand("fly").setExecutor(new FlyCommand());
         getCommand("heal").setExecutor(new HealCommand());
-        getCommand("msg").setExecutor(msgCommand);
+        getCommand("msg").setExecutor(new MsgCommand());
         getCommand("broadcast").setExecutor(new BroadcastCommand());
         getCommand("r").setExecutor(new ResponseCommand());
         getCommand("pancake").setExecutor(new PancakeCommand());
@@ -61,21 +68,5 @@ public final class Core extends JavaPlugin {
         } catch (Exception e) {
             getLogger().severe("An error occurred while checking for updates: " + e.getMessage());
         }
-    }
-
-    public static Core getInstance() {
-        return instance;
-    }
-
-    public String getLatestVersion() {
-        return latestVersion;
-    }
-
-    public GodCommand getGodCommand() {
-        return godCommand;
-    }
-
-    public MsgCommand getMsgCommand() {
-        return msgCommand;
     }
 }
