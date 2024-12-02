@@ -10,13 +10,10 @@ import java.nio.charset.StandardCharsets;
 
 public final class UpdateChecker {
 
-	private static final String GITHUB_API_URL = "https://api.github.com/repos/evvskw/EUtils/releases/latest";
-	private static final String USER_AGENT = "Mozilla/5.0";
-
 	public String fetchLatestVersion() throws Exception {
-		final HttpURLConnection connection = (HttpURLConnection) new URL(GITHUB_API_URL).openConnection();
+		final HttpURLConnection connection = (HttpURLConnection) new URL("https://api.github.com/repos/evvskw/EUtils/releases/latest").openConnection();
 		connection.setRequestMethod("GET");
-		connection.setRequestProperty("User-Agent", USER_AGENT);
+		connection.setRequestProperty("User-Agent", "Mozilla/5.0");
 		connection.setRequestProperty("Accept", "application/vnd.github.v3+json");
 
 		final int responseCode = connection.getResponseCode();
