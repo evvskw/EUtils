@@ -2,19 +2,20 @@ package it.evvsk.eUtils.Commands;
 
 import it.evvsk.eUtils.Core;
 import it.evvsk.eUtils.Utils.SC;
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.entity.Player;
 
-public class CheckUpdateCommand implements CommandExecutor {
+public final class CheckUpdateCommand implements CommandExecutor {
 
 	private static final String VERSION = Core.getInstance().getDescription().getVersion();
 
 	@Override
 	public boolean onCommand(final org.bukkit.command.CommandSender sender, final org.bukkit.command.Command command, final String s, final String[] args) {
 
-		Player p = (Player) sender;
+		final Player p;
 
-		if (!(p.hasPermission("eutils.command.checkupdate"))) {
+		if (!((p = Bukkit.getPlayer(args[0])).hasPermission("eutils.command.checkupdate"))) {
 
 			p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cInsufficient permissions."));
 
@@ -23,7 +24,7 @@ public class CheckUpdateCommand implements CommandExecutor {
 		}
 
 		try {
-			String latestVersion = Core.getInstance().getLatestVersion();
+			final String latestVersion = Core.getInstance().getLatestVersion();
 
 			if (latestVersion != null && !VERSION.equals(latestVersion)) {
 				notifyPlayer(p, latestVersion);

@@ -27,9 +27,9 @@ public final class FlyCommand implements CommandExecutor {
 
             if (args.length == 1) {
 
-                final Player subjectPlayer = Bukkit.getPlayer(args[0]);
+                final Player subjectPlayer;
 
-                System.out.println(subjectPlayer.isFlying());
+                System.out.println((subjectPlayer = Bukkit.getPlayer(args[0])).isFlying());
 
                 if (subjectPlayer.getAllowFlight() || subjectPlayer.isFlying()) {
 

@@ -31,9 +31,9 @@ public final class GodCommand implements CommandExecutor {
 
             if (args.length == 1) {
 
-                final Player subjectPlayer = Bukkit.getPlayer(args[0]);
+                final Player subjectPlayer;
 
-                if (subjectPlayer == null) {
+                if ((subjectPlayer = Bukkit.getPlayer(args[0])) == null) {
                     p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cPlayer not found."));
                     return true;
                 }

@@ -19,7 +19,7 @@ public final class FeedCommand implements CommandExecutor {
             return true;
         }
 
-        if (!p.hasPermission("eutils.command.feed")) {
+        if (!(p = Bukkit.getPlayer(args[0])).hasPermission("eutils.command.feed")) {
 
             p.sendMessage(SC.CC("&e&lE&f&lUtils &8&l» &cInsufficient permissions."));
 
