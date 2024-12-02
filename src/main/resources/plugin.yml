@@ -62,7 +62,6 @@ commands:
       - help
       - about
       - info
-    permission: eutils.command.eutils
 
   fly:
     description: Toggles fly mode for a player.

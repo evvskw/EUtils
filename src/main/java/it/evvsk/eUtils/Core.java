@@ -24,7 +24,7 @@ public final class Core extends JavaPlugin {
         getCommand("gms").setExecutor(new GMSurvivalCommand());
         getCommand("gmsp").setExecutor(new GMSpectatorCommand());
         getCommand("gma").setExecutor(new GMAdventureCommand());
-        getCommand("eutils").setExecutor(new MainCommand());
+        getCommand("eutils").setExecutor(new HelpCommand(this));
         getCommand("fly").setExecutor(new FlyCommand());
         getCommand("heal").setExecutor(new HealCommand());
         getCommand("msg").setExecutor(msgCommand);
