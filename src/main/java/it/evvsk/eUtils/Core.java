@@ -3,6 +3,7 @@ package it.evvsk.eUtils;
 import it.evvsk.eUtils.Commands.*;
 import it.evvsk.eUtils.Events.EntityDamageListener;
 import it.evvsk.eUtils.Events.PlayerJoinListener;
+import it.evvsk.eUtils.Utils.UpdateChecker;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Core extends JavaPlugin {
@@ -10,10 +11,13 @@ public final class Core extends JavaPlugin {
     private static Core instance;
     private static GodCommand godCommand;
     private MsgCommand msgCommand;
+    private String latestVersion;
 
     @Override
     public void onEnable() {
         instance = this;
+
+        checkForUpdates();
 
         godCommand = new GodCommand();
         msgCommand = new MsgCommand();
@@ -43,8 +47,27 @@ public final class Core extends JavaPlugin {
         getLogger().info("EUtils has stopped successfully. Goodbye!");
     }
 
+    private void checkForUpdates() {
+        try {
+            UpdateChecker updateChecker = new UpdateChecker();
+            latestVersion = updateChecker.fetchLatestVersion();
+
+            if (latestVersion != null) {
+                getLogger().info("Latest version found: " + latestVersion);
+            } else {
+                getLogger().warning("Unable to fetch the latest version.");
+            }
+        } catch (Exception e) {
+            getLogger().severe("An error occurred while checking for updates: " + e.getMessage());
+        }
+    }
+
     public static Core getInstance() {
         return instance;
+    }
+
+    public String getLatestVersion() {
+        return latestVersion;
     }
 
     public GodCommand getGodCommand() {
