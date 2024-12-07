@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'it.evvsk'
-version = '1.0-SNAPSHOT'
+version = '1.4-SNAPSHOT'
 
 repositories {
     mavenCentral()
