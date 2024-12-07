@@ -4,5 +4,4 @@
 A simple plugin with various utility commands.
 
 ## To do:
-- [ ] TP commands.
 - [ ] Text -> Emoji converter
