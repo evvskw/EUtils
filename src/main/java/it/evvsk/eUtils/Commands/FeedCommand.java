@@ -12,7 +12,7 @@ public final class FeedCommand implements CommandExecutor {
     @Override
     public boolean onCommand(final CommandSender sender, final Command command, final String s, final String[] args) {
         if (!(sender instanceof Player p)) {
-            Bukkit.getLogger().info("You must be a player to perform this command.");
+            sender.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cYou must be a player to perform this command."));
             return true;
         }
 

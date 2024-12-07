@@ -1,5 +1,5 @@
 name: EUtils
-version: '1.3-SNAPSHOT'
+version: '1.4-SNAPSHOT'
 main: it.evvsk.eUtils.Core
 api-version: '1.8.8'
 description: A simple plugin with various utility commands.
@@ -13,7 +13,7 @@ commands:
     aliases:
       - godmode
     permission: eutils.command.god
-    permission-message: "&cYou don't have permission to use this command."
+    permission-message: '§e§lE§f§lUtils §8» §cInsufficient permissions.'
 
   gmc:
     description: Changes a player's gamemode to Creative.
@@ -22,6 +22,7 @@ commands:
       - gamemodecreative
       - creative
     permission: eutils.command.gamemode.creative
+    permission-message: '§e§lE§f§lUtils §8» §cInsufficient permissions.'
 
   gms:
     description: Changes a player's gamemode to Survival.
@@ -30,6 +31,7 @@ commands:
       - gamemodesurvival
       - survival
     permission: eutils.command.gamemode.survival
+    permission-message: '§e§lE§f§lUtils §8» §cInsufficient permissions.'
 
   gmsp:
     description: Changes a player's gamemode to Spectator.
@@ -38,6 +40,7 @@ commands:
       - gamemodespectator
       - spectator
     permission: eutils.command.gamemode.spectator
+    permission-message: '§e§lE§f§lUtils §8» §cInsufficient permissions.'
 
   gma:
     description: Changes a player's gamemode to Adventure.
@@ -46,6 +49,7 @@ commands:
       - gamemodeadventure
       - adventure
     permission: eutils.command.gamemode.adventure
+    permission-message: '§e§lE§f§lUtils §8» §cInsufficient permissions.'
 
   feed:
     description: Feeds a player.
@@ -54,6 +58,7 @@ commands:
       - fd
       - food
     permission: eutils.command.feed
+    permission-message: '§e§lE§f§lUtils §8» §cInsufficient permissions.'
 
   eutils:
     description: Displays the plugin help information.
@@ -63,10 +68,12 @@ commands:
       - about
       - info
 
+
   fly:
     description: Toggles fly mode for a player.
     usage: /<command> <player>
     permission: eutils.command.fly
+    permission-message: '§e§lE§f§lUtils §8» §cInsufficient permissions.'
 
   heal:
     description: Heals a player.
@@ -77,6 +84,7 @@ commands:
       - hearts
       - htp
     permission: eutils.command.heal
+    permission-message: '§e§lE§f§lUtils §8» §cInsufficient permissions.'
 
   msg:
     description: DMs a player.
@@ -85,6 +93,7 @@ commands:
       - tell
       - dm
     permission: eutils.command.msg
+    permission-message: '§e§lE§f§lUtils §8» §cInsufficient permissions.'
 
   r:
     description: Responds to last DMed player
@@ -94,10 +103,12 @@ commands:
       - reply
       - response
     permission: eutils.command.response
+    permission-message: '§e§lE§f§lUtils §8» §cInsufficient permissions.'
 
   pancake:
     description: Pancake!
     usage: /<command>
+    permission-message: '§e§lE§f§lUtils §8» §cInsufficient permissions.'
     aliases:
       - yummy
 
@@ -107,6 +118,7 @@ commands:
     aliases:
       - bc
     permission: eutils.command.broadcast
+    permission-message: '§e§lE§f§lUtils §8» §cInsufficient permissions.'
 
   checkupdate:
     description: Checks if there's any new update.
@@ -116,3 +128,21 @@ commands:
       - cu
       - update
     permission: eutils.command.checkupdate
+    permission-message: '§e§lE§f§lUtils §8» §cInsufficient permissions.'
+
+  tp:
+    description: TPs to a player.
+    usage: /<command> <target1/coordinates> <target2/coordinates>
+    aliases:
+      - teleport
+    permission: eutils.command.teleport
+    permission-message: '§e§lE§f§lUtils §8» §cInsufficient permissions.'
+
+  tphere:
+    description: Teleports a player to you.
+    usage: /tphere <player>
+    permission: eutils.command.tphere
+    permission-message: '§e§lE§f§lUtils §8» §cInsufficient permissions.'
+    aliases:
+      - tph
+      - th

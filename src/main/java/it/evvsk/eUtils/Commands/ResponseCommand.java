@@ -15,7 +15,7 @@ public final class ResponseCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
         if (!(sender instanceof Player p)) {
-            Bukkit.getLogger().info("You must be a player to perform this command.");
+            sender.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cYou must be a player to perform this command."));
             return true;
         }
 
