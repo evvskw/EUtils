@@ -1,7 +1,7 @@
-package it.evvsk.eUtils.commands;
+package it.evvsk.eUtils.Commands;
 
 import it.evvsk.eUtils.Core;
-import it.evvsk.eUtils.utils.SC;
+import it.evvsk.eUtils.Utils.SC;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -25,7 +25,7 @@ public final class CheckUpdateCommand implements CommandExecutor {
 		}
 
 		try {
-			final String latestVersion = Core.getInstance().getLatestVersion();
+			final String latestVersion = Core.instance.latestVersion;
 			if (latestVersion != null && !VERSION.equals(latestVersion)) {
 				notifyPlayer(p, latestVersion);
 				return true;

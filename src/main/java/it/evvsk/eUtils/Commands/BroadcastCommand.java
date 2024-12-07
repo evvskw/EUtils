@@ -1,7 +1,7 @@
-package it.evvsk.eUtils.commands;
+package it.evvsk.eUtils.Commands;
 
 import org.bukkit.Bukkit;
-import it.evvsk.eUtils.utils.SC;
+import it.evvsk.eUtils.Utils.SC;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -11,23 +11,22 @@ public final class BroadcastCommand implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(final CommandSender sender, final Command command, final String s, final String[] args) {
-		if (!(sender instanceof Player p)) {
-			Bukkit.getLogger().info("You must be a player to perform this command.");
-			return true;
-		}
+
+		final Player p = (Player) sender;
 
 		if (!p.hasPermission("eutils.command.broadcast")) {
 			p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cInsufficient permissions."));
 			return true;
 		}
+
 		if (args.length < 1) {
 			p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cCorrect usage: /broadcast <message>"));
 			return true;
 		}
+
 		final String message = String.join(" ", args);
-		for (Player player : Bukkit.getOnlinePlayers()) {
-			player.sendMessage(SC.CC("&e&lBroad&f&lcast &8» &f" + message));
-		}
+		Bukkit.broadcastMessage(SC.CC("&e&lBroad&f&lcast &8» &f" + message));
+
 		return true;
 	}
 }

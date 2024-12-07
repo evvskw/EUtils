@@ -1,4 +1,4 @@
-package it.evvsk.eUtils.listeners;
+package it.evvsk.eUtils.Listeners;
 
 import it.evvsk.eUtils.Core;
 import org.bukkit.event.EventHandler;

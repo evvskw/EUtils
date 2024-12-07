@@ -1,6 +1,6 @@
-package it.evvsk.eUtils.commands;
+package it.evvsk.eUtils.Commands;
 
-import it.evvsk.eUtils.utils.SC;
+import it.evvsk.eUtils.Utils.SC;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
@@ -8,7 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public final class GMSurvivalCommand implements CommandExecutor {
+public final class GMAdventureCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(final CommandSender sender, final Command command, final String s, final String[] args) {
@@ -17,14 +17,14 @@ public final class GMSurvivalCommand implements CommandExecutor {
             return true;
         }
 
-        if (!p.hasPermission("eutils.command.gamemode.survival")) {
+        if (!p.hasPermission("eutils.command.gamemode.adventure")) {
             p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &cInsufficient permissions."));
             return true;
         }
 
         if (args.length == 0) {
-            p.setGameMode(GameMode.SURVIVAL);
-            p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &aYour gamemode has been changed successfully to survival."));
+            p.setGameMode(GameMode.ADVENTURE);
+            p.sendMessage(SC.CC("&e&lE&f&lUtils &8» &aYour gamemode has been changed successfully to adventure."));
             return true;
         }
 
@@ -36,11 +36,11 @@ public final class GMSurvivalCommand implements CommandExecutor {
         }
 
         String message = target.getName().endsWith("s") ?
-                "&e&lE&f&lUtils &8» &a" + target.getName() + "' gamemode has been changed successfully to survival." :
-                "&e&lE&f&lUtils &8» &a" + target.getName() + "'s gamemode has been changed successfully to survival.";
-        target.setGameMode(GameMode.SURVIVAL);
+                "&e&lE&f&lUtils &8» &a" + target.getName() + "' gamemode has been changed successfully to adventure." :
+                "&e&lE&f&lUtils &8» &a" + target.getName() + "'s gamemode has been changed successfully to adventure.";
+        target.setGameMode(GameMode.ADVENTURE);
         p.sendMessage(SC.CC(message));
-        target.sendMessage(SC.CC("&e&lE&f&lUtils &8» &aYour gamemode has been changed successfully to survival."));
+        target.sendMessage(SC.CC("&e&lE&f&lUtils &8» &aYour gamemode has been changed successfully to adventure."));
         return true;
     }
 

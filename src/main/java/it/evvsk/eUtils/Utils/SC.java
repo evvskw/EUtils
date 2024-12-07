@@ -1,4 +1,4 @@
-package it.evvsk.eUtils.utils;
+package it.evvsk.eUtils.Utils;
 
 import lombok.experimental.UtilityClass;
 import org.bukkit.ChatColor;

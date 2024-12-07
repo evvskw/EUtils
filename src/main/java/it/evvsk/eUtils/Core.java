@@ -1,12 +1,13 @@
 package it.evvsk.eUtils;
 
-import it.evvsk.eUtils.commands.*;
-import it.evvsk.eUtils.listeners.EntityDamageListener;
-import it.evvsk.eUtils.listeners.PlayerJoinListener;
-import it.evvsk.eUtils.utils.UpdateChecker;
-import lombok.Getter;
+import it.evvsk.eUtils.Commands.*;
+import it.evvsk.eUtils.Listeners.EntityDamageListener;
+import it.evvsk.eUtils.Listeners.PlayerJoinListener;
+import it.evvsk.eUtils.Utils.UpdateChecker;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,10 +17,10 @@ import java.util.Map;
 @Getter
 public final class Core extends JavaPlugin {
 
-    @Getter private static Core instance;
-    private List<Player> gods;
-    private String latestVersion;
-    private Map<Player, Player> lastMessagedPlayerList;
+    @Getter public static Core instance;
+    public List<Player> gods;
+    public String latestVersion;
+    public Map<Player, Player> lastMessagedPlayerList;
 
     @Override
     public void onEnable() {
