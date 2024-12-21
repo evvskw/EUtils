@@ -3,18 +3,17 @@ package it.evvsk.eUtils.Listeners;
 import it.evvsk.eUtils.Core;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerChatEvent;
-
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 import java.util.Map;
 
 public final class PlayerChatListener implements Listener {
 
 	@EventHandler
-	public void onMessage(final PlayerChatEvent event) {
+	public void onMessage(final AsyncPlayerChatEvent event) {
 
-		final Map<String, Object> emojiMap = Core.getInstance().getDataMap();
+		final Map<String, Object> emojiMap;
 
-		if (emojiMap != null && emojiMap.containsKey("emojis")) {
+		if ((emojiMap = Core.getInstance().getDataMap()) != null && emojiMap.containsKey("emojis")) {
 
 			Core.getInstance().getLogger().info(event.getMessage());
 
